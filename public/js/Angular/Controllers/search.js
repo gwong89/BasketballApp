@@ -1,3 +1,4 @@
+
 function SearchCtrl($scope, $http) {
 	$scope.url = 'public/search.php'; // The url of our search
 		
