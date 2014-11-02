@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html ng-app="basketball">
+<html data-ng-app="basketball">
 <head>
 	<title>BasketballApp</title>
-	<link rel="stylesheet" href="public/myStyle.css" type="text/css"/>
+	<link rel="stylesheet" href="public/css/myStyle.css" type="text/css"/>
 	<link rel="stylesheet" href="public/css/bootstrap.min.css" type="text/css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
   <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.2.js"></script>
 	<script src="public/js/main.js"></script>
-	<script src="public/js/Angular/Controllers/tabs.js"></script>	
+	<script src="public/js/Angular/Controllers/tabs.js"></script>
+	<script src="public/js/Angular/Controllers/addNewTeam.js"></script>	
 </head>
 
 <body>
-	<div class="tabrows" ng-controller="TabsDemoController as T">
-
+	
+	<div class btn-group data-ng-controller="NewTeamController">
+		<button type="button" class="btn btn-danger" ng-click="open()"> Add New Team</button>
+	</div>	
+	
+	<div class="tabrows" data-ng-controller="TabsDemoController as T">
 	  <tabset justified="true">
-	    <tab heading="Justified">Justified content</tab>
-	    <tab heading="SJ">Short Labeled Justified content</tab>
-	    <tab heading="Long Justified">Long Labeled Justified content</tab>
+	    <tab heading="Schedule"></tab>
+	    <tab heading="Standing"></tab>
 	  </tabset>
 	</div>
 </body>

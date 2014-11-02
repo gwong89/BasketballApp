@@ -1,0 +1,27 @@
+<div class="makeNewTeam">
+	<br/>
+	<div class="row">
+		<div class="col-xs-12 col-centered">
+			<p class="modal-dialog-header text-center">Create a New Team</p>
+		</div>
+	</div>
+	<div class="modal-dialog-content">
+		<form name="Create Team">
+		  <div class="row">
+		    <div class="col-xs-12">
+		      <input type="text" class="form-control" ng-model="teamName" placeholder="Enter Name" required>
+		    </div>
+		  </div>
+			<br/>
+			<div class="row">
+				<div class="col-xs-6">
+					<input type="button" value="Cancel" class="btn btn-warning" ng-click="cancel()">
+				</div>
+				<div class="col-xs-6">
+					<input type="submit" value="Make Team!" class="btn btn-primary" ng-click="submit()">
+				</div>
+			</div>
+			<br/>
+		</form>
+	</div>
+</div>

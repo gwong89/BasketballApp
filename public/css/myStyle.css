@@ -1,7 +1,7 @@
-.tabsrow{
+.tabrows{
 	position:fixed;
-	top:-500px;
+	top:30%;
 }
 body {
-    background-color: lightblue;
+  background-color: #b0c4de;
 }

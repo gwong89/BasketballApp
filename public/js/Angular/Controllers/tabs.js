@@ -1,3 +1,4 @@
+(function(){
 angular.module('basketball').controller('TabsDemoController',TabsDemoController);
 
 function TabsDemoController() {
@@ -13,3 +14,5 @@ function TabsDemoController() {
     });
   };
 }
+
+})()
