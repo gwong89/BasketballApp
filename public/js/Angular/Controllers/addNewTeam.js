@@ -7,6 +7,8 @@
 			var modalInstance = $modal.open({
 				templateUrl: 'public/js/Angular/templates/modal-form/addNewTeam.html',
 				controller: 'ModalAddTeamController',
+				keyboard: true,
+				backdrop: 'static',
 				size: size
 			});
   	};
