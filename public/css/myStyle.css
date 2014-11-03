@@ -5,3 +5,8 @@
 body {
   background-color: #b0c4de;
 }
+
+
+.modal-dialog {
+  padding-top: 30%;
+}
