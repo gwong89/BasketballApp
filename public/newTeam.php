@@ -3,10 +3,13 @@
 // We must read the input.
 // $_POST or $_GET will not work!
 
+mysql_connect("localhost", "root", "cowultra16") or die(mysql_error());
+mysql_select_db("basketball_intra") or die(mysql_error());
+
 $data = file_get_contents("php://input");
 
 $objData = json_decode($data);
-
+$stmt = $dbh->prepare("INSERT INTO basketball_intra.Teams (Name, Wins, Losess) VALUES ($objData, 0, 0)");
 // perform query or whatever you wish, sample:
 
 /*
@@ -15,14 +18,4 @@ tbl_content
 WHERE
 title="'. $objData->data .'"';
 */
-
-// Static array for this demo
-$values = array('php', 'web', 'angularjs', 'js');
-
-// Check if the keywords are in our array
-if(in_array($objData->data, $values)) {
-	echo 'I have found what you\'re looking for!';
-}
-else {
-	echo 'Sorry, no match!';
-}
+?>

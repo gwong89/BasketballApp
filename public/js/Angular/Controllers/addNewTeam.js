@@ -16,11 +16,19 @@
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
-angular.module('basketball').controller('ModalAddTeamController',['$scope','$modalInstance',function($scope,$modalInstance){
+angular.module('basketball').controller('ModalAddTeamController',['$scope','$modalInstance','AddTeamFactory',function($scope,$modalInstance,AddTeamFactory){
 		
-
+	
+		
+		$scope.addTeam = function(){
+		return AddTeamFactory.newTeam($scope.newTeam).then(function(data){
+			$scope.data = data;
+			return $scope.data;
+		});	
+	}
+		
 		$scope.submit = function(){
-    	$modalInstance.close();
+    	$modalInstance.close($scope.addTeam());
   	};
 
  	 	$scope.cancel = function() {

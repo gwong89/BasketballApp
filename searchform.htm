@@ -9,14 +9,15 @@
 	<script src="public/js/main.js"></script>
 	<script src="public/js/Angular/Controllers/tabs.js"></script>
 	<script src="public/js/Angular/Controllers/addNewTeam.js"></script>	
+	<script src="public/js/Angular/Factories/AddTeamFactory.js"></script>
 </head>
 
 <body>
 	
 	<div class btn-group data-ng-controller="NewTeamController">
 		<button type="button" class="btn btn-danger" ng-click="open()"> Add New Team</button>
-	</div>	
-	
+	</div>
+
 	<div class="tabrows" data-ng-controller="TabsDemoController as T">
 	  <tabset justified="true">
 	    <tab heading="Schedule"></tab>
