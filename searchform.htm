@@ -8,20 +8,32 @@
   <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.2.js"></script>
 	<script src="public/js/main.js"></script>
 	<script src="public/js/Angular/Controllers/tabs.js"></script>
-	<script src="public/js/Angular/Controllers/addNewTeam.js"></script>	
+	<script src="public/js/Angular/directives/standing.js"></script>
+	<script src="public/js/Angular/directives/schedule.js"></script>
+	<script src="public/js/Angular/Controllers/addNewTeam.js"></script>
 	<script src="public/js/Angular/Factories/AddTeamFactory.js"></script>
 </head>
 
 <body>
 	
+<div class="button row">	
 	<div class btn-group data-ng-controller="NewTeamController">
-		<button type="button" class="btn btn-danger" ng-click="open()"> Add New Team</button>
+		<button type="button" class="btn btn-info" ng-click="open()"> Add New Team</button>
 	</div>
+	
+	<div class btn-group data-ng-controller="ScheduleGameController">
+		<button type="button" class="btn btn-primary" ng-click="open()">Schedule Game</button>
+	</div>
+	
+	<div class btn-group data-ng-controller="ScoreGameController">
+		<button type="button" class="btn btn-warning" ng-click="open()">Score Game</button>
+	</div>
+</div>
 
-	<div class="tabrows" data-ng-controller="TabsDemoController as T">
+	<div class="tabrows" data-ng-controller="TabsDemoController">
 	  <tabset justified="true">
-	    <tab heading="Schedule"></tab>
-	    <tab heading="Standing"></tab>
+	    <tab heading="Schedule"><team-schedule></team-schedule></tab>
+	    <tab heading="Standing"><team-standing></team-standing></tab>
 	  </tabset>
 	</div>
 </body>

@@ -9,7 +9,7 @@
 		};
 			
 		function newTeam(teamName){	
-			return $http.post('newTeam.php',{data: teamName}).
+			return $http.post('newTeam.php',{"name": teamName}).
 			success(function(data,status){
 				console.log("successfully posted");
 				return status;

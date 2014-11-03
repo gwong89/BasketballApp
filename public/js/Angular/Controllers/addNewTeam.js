@@ -19,16 +19,16 @@
 angular.module('basketball').controller('ModalAddTeamController',['$scope','$modalInstance','AddTeamFactory',function($scope,$modalInstance,AddTeamFactory){
 		
 	
-		
-		$scope.addTeam = function(){
-		return AddTeamFactory.newTeam($scope.newTeam).then(function(data){
+	$scope.newTeamName = $scope.teamName;
+		$scope.addTeam = function(teamName){
+		return AddTeamFactory.newTeam(teamName).then(function(data){
 			$scope.data = data;
 			return $scope.data;
 		});	
-	}
+	}			
 		
 		$scope.submit = function(){
-    	$modalInstance.close($scope.addTeam());
+    	$modalInstance.close($scope.addTeam($scope.newTeamName));
   	};
 
  	 	$scope.cancel = function() {
