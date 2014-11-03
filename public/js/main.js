@@ -1,1 +1,1 @@
-angular.module('basketball', ['ui.bootstrap']);
+angular.module('basketball', ['ui.bootstrap','ngGrid']);
