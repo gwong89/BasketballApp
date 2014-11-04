@@ -9,7 +9,7 @@
 				controller: 'ModalAddTeamController',
 				keyboard: true,
 				backdrop: 'static',
-				size: size
+				windowClass:'modalTeam'
 			});
   	};
 }]);
@@ -27,7 +27,7 @@ angular.module('basketball').controller('ModalAddTeamController',['$scope','$mod
 	}			
 		
 		$scope.submit = function(){
-    	$modalInstance.close($scope.addTeam(teamName));
+    	$modalInstance.close($scope.addTeam($scope.teamName));
   	};
 
  	 	$scope.cancel = function() {

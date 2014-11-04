@@ -2,23 +2,24 @@
 	<br/>
 	<div class="row">
 		<div class="col-xs-12 col-centered">
-			<p class="modal-dialog-header text-center">Create a New Team</p>
+			<p class="modal-dialog-header text-center">Make A Team</p>
 		</div>
 	</div>
+
 	<div class="modal-dialog-content">
-	<form name="createTeam">
+		<form name="createTeam">
 		  <div class="row">
 		    <div class="col-xs-12">
-		      <input type="text" class="form-control" ng-model="teamName" placeholder="Enter Name" required>
+		      <input type="text" class="form-control team-input" ng-model="teamName" placeholder="Enter Team Name" required>
 		    </div>
 		  </div>
 			<br/>
-			<div class="row">
-				<div class="col-xs-6">
-					<button type="button" value="Cancel" class="btn btn-warning" ng-click="cancel()">
+			<div class="row-modal">
+				<div class="col-xs-6 cancel-button">
+					<input type="button" value="Cancel" class="btn btn-default btn-form modal-dialog-btn btn-block" ng-click="cancel()">
 				</div>
 				<div class="col-xs-6">
-					<button type="submit" value="Make Team!" class="btn btn-primary" ng-click="submit()">
+					<input type="submit"  value="Make Team" class="btn btn-info btn-form modal-dialog-btn btn-block" ng-click="submit()">
 				</div>
 			</div>
 			<br/>
