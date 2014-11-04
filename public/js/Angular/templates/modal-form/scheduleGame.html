@@ -13,9 +13,23 @@
              </p>
          </div>
      </div> 
-		 <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="!ismeridian"></timepicker>          
+		 <timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="!ismeridian"></timepicker> 
+		 <div class="row well-text-padding profile-setup-row">
+		 	<div class="col-md-7" style="margin-top:16px">
+		 		<div class="row">
+		 			<div class="col-md-6">
+						<span class="label-text">Home</span>
+		 				<select ng-model="home" placeholder="Home" class="form-control" ng-options="team.Name for team in teamsList"></select>
+		 			</div>
+		 			<div class="col-md-6">
+						<span class="label-text">Away</span>
+		 				<select ng-model="away" placeholder="Away" class="form-control" ng-options="team.Name for team in teamsList"></select>
+		 			</div>
+		 		</div>
+		 	</div>
+		 </div>         
 </div>
 <div class="modal-footer">
-<button class="btn btn-primary" ng-click="ok()">OK</button>
+<button class="btn btn-primary" ng-click="submit()">Submit</button>
 <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
 </div>

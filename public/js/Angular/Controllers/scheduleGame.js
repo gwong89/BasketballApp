@@ -16,7 +16,7 @@ angular.module('basketball').controller('ScheduleGameController',['$scope','$mod
 	}]);
 
 
-angular.module('basketball').controller('ModalScheduleController',['$scope','$modalInstance','passingService',function($scope,$modalInstance,passingService){
+angular.module('basketball').controller('ModalScheduleController',['$scope','$modalInstance','passingService','getTeamsFactory',function($scope,$modalInstance,passingService,getTeamsFactory){
 			
   $scope.today = function() {
      $scope.dt = new Date();
@@ -42,20 +42,7 @@ angular.module('basketball').controller('ModalScheduleController',['$scope','$mo
    $scope.format = $scope.formats[0];
 					
 	 $scope.mytime = new Date();
-
-	   $scope.hstep = 1;
-	   $scope.mstep = 15;
-
-	   $scope.options = {
-	     hstep: [1, 2, 3],
-	     mstep: [1, 5, 10, 15, 25, 30]
-	   };
-
 	   $scope.ismeridian = true;
-	   $scope.toggleMode = function() {
-	     $scope.ismeridian = ! $scope.ismeridian;
-	   };
-
 	   $scope.update = function() {
 	     var d = new Date();
 	     d.setHours( 14 );
@@ -66,14 +53,30 @@ angular.module('basketball').controller('ModalScheduleController',['$scope','$mo
 	   $scope.changed = function () {
 	     console.log('Time changed to: ' + $scope.mytime);
 	   };
+		 
+		 $scope.factoryResponse = getTeamsFactory.teams();
+		 $scope.factoryResponse.then(function(response){
+			 $scope.teamsList = response.data;
+			 console.log($scope.teamsList);
+		 });
+		 
 
 	   $scope.clear = function() {
 	     $scope.mytime = null;
 	   };	
 			
-		 	 	$scope.cancel = function() {
-		    	$modalInstance.dismiss('cancel');
-		  	};
-
+		 $scope.cancel = function() {
+		    $modalInstance.dismiss('cancel');
+		 };
+		 
+		 
+		 
+		 $scope.submit = function(){
+			 $modalInstance.close()
+		 }
+		 
+		 
+		 
+		 
 		}]);
 	})()
