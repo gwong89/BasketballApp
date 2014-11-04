@@ -1,16 +1,18 @@
 (function(){
 angular.module('basketball').controller('TeamStandingController',TeamStandingController);
 
-TeamStandingController.$inject = ['$scope','getStandingFactory'];
+TeamStandingController.$inject = ['$scope','getStandingFactory','passingService'];
 
-function TeamStandingController($scope,getStandingFactory) {
+function TeamStandingController($scope,getStandingFactory,passingService) {
 	
-	 var factoryResponse = getStandingFactory.standing();
-	 factoryResponse.then(function(response){
+	 $scope.factoryResponse = getStandingFactory.standing();
+	 $scope.factoryResponse.then(function(response){
 		 $scope.name = response.data;
-		 console.log($scope.name);
-		 
+		  passingService.getTable(response.data); 	
 	 });
+	 
+	
+	 
 	 
 	var NameTemplate = '<div class="ngCellText" ng-class="col.colIndex()"><span class="thick treatment-description">{{row.entity.Name}}</span></div>';
   var WinTemplate = '<div class="ngCellText" ng-class="col.colIndex()"><span class="thick">{{row.entity.Wins}}</div>';

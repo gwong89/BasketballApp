@@ -1,9 +1,14 @@
-(function(){
-angular.module('basketball').controller('ScheduleGameController',ScheduleGameController);
+(function() {
 
-ScheduleGameController.$inject = ['$scope'];
+	angular.module('basketball').controller('ScheduleGameController',['$scope','$modal',function($scope,$modal){
 
-function ScheduleGameController($scope) {
-}
-
-})()
+		$scope.open = function(){
+		
+			var modalInstance = $modal.open({
+				templateUrl: 'public/js/Angular/templates/modal-form/addNewTeam.html',
+				controller: 'ModalScheduleController',
+				backdrop: 'static',
+				scope: $scope,
+			});
+  	};
+}]);
