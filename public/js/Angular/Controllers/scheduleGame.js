@@ -16,7 +16,7 @@ angular.module('basketball').controller('ScheduleGameController',['$scope','$mod
 	}]);
 
 
-angular.module('basketball').controller('ModalScheduleController',['$scope','$modalInstance','passingService','getTeamsFactory',function($scope,$modalInstance,passingService,getTeamsFactory){
+angular.module('basketball').controller('ModalScheduleController',['$scope','$modalInstance','passingService','getTeamsFactory','AddScheduleFactory',function($scope,$modalInstance,passingService,getTeamsFactory,AddScheduleFactory){
 			
   $scope.today = function() {
      $scope.dt = new Date();
@@ -43,16 +43,7 @@ angular.module('basketball').controller('ModalScheduleController',['$scope','$mo
 					
 	 $scope.mytime = new Date();
 	   $scope.ismeridian = true;
-	   $scope.update = function() {
-	     var d = new Date();
-	     d.setHours( 14 );
-	     d.setMinutes( 0 );
-	     $scope.mytime = d;
-	   };
-
-	   $scope.changed = function () {
-	     console.log('Time changed to: ' + $scope.mytime);
-	   };
+	 
 		 
 		 $scope.factoryResponse = getTeamsFactory.teams();
 		 $scope.factoryResponse.then(function(response){
@@ -71,7 +62,12 @@ angular.module('basketball').controller('ModalScheduleController',['$scope','$mo
 		 
 		 
 		 
+		 
+		 
 		 $scope.submit = function(){
+			 console.log($scope.dt);
+			 console.log($scope.mytime);
+			 //AddScheduleFactory.schedule($scope.home,$scope.away,)
 			 $modalInstance.close()
 		 }
 		 
