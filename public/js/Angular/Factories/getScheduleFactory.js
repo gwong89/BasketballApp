@@ -9,7 +9,7 @@
 		};
 			
 		function schedule(){	
-			return $http.get('schedule.php').
+			return $http.get('getSchedule.php').
 			success(function(data,status){
 				console.log("successfully get");
 				return data;
