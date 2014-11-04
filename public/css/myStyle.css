@@ -33,8 +33,71 @@ body {
 }
 
 
-
 .gridStyle {
-    border: 1px solid rgb(212,212,212);
-    
+  margin-left:auto;
+  margin-right:auto;
+  border-top: 1px solid #D8D8D8;
+  width: 100%;
+}
+
+.gridStyle .ngVerticalBarVisible {
+  width: 0px !important;
+  background-color: none !important;
+}
+
+.gridStyle .ngTopPanel{
+  background-color: transparent !important;
+}
+
+.gridStyle .ngRow:last-of-type{
+  border-bottom: none !important;
+}
+
+.gridStyle .ngRow.even{
+  background-color: transparent;
+	border-bottom:  1px solid #D8D8D8;
+}
+
+.gridStyle .ngRow.odd{
+  background-color: transparent;
+	border-bottom:  1px solid #D8D8D8;
+}
+
+.gridStyle .ngRow.selected {
+  background-color: #F5FFEB;
+}
+
+.gridStyle .ngCellText{
+   border-bottom: 1px solid rgb(212,212,212);
+   padding-left: 5px;
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   white-space: nowrap;
+   -ms-text-overflow: ellipsis;
+   -o-text-overflow: ellipsis;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+
+.gridStyle .ngHeaderText{
+	font-weight: bold;
+  font-family: 'AvenirNext-DemiBold', Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 12px;
+  color: #4A4A4A;
+  line-height: 45px;
+}
+
+.gridStyle .thick{
+  font-family: 'AvenirNext-Medium', Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+
+
+.gridStyle .cellIndex {
+	font-family: 'AvenirNext-Medium', Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 16px;
+  padding-top: 25px;
+  padding-left: 20px;
 }

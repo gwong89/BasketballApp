@@ -23,6 +23,7 @@ function TeamStandingController($scope,getStandingFactory) {
 			 data: 'name',
 			 rowHeight: 70,
 			 headerRowHeight: 50,
+			 plugins: [new ngGridFlexibleHeightPlugin()],
 				
 			 columnDefs: [
  	    {

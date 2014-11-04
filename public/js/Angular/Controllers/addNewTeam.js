@@ -19,7 +19,6 @@
 angular.module('basketball').controller('ModalAddTeamController',['$scope','$modalInstance','AddTeamFactory',function($scope,$modalInstance,AddTeamFactory){
 		
 	
-	$scope.newTeamName = $scope.teamName;
 		$scope.addTeam = function(teamName){
 		return AddTeamFactory.newTeam(teamName).then(function(data){
 			$scope.data = data;
@@ -28,7 +27,7 @@ angular.module('basketball').controller('ModalAddTeamController',['$scope','$mod
 	}			
 		
 		$scope.submit = function(){
-    	$modalInstance.close($scope.addTeam($scope.newTeamName));
+    	$modalInstance.close($scope.addTeam(teamName));
   	};
 
  	 	$scope.cancel = function() {
